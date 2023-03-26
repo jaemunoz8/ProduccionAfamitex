@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Editar usuario</title> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <center><h1>Editar OC</h1> <br></center>
+  <form action="/storeUser" method="post" enctype="multipart/form-data">
+    <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="txtid">Id</label>
+            <input type="text" class="form-control" name="txtid" id="txtid" style="color:blue">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="txtnombre">Nombre</label>
+            <input type="text"  class="form-control" name="txtnombre" id="txtnombre">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="txtemail">Email</label>
+            <input type="text"  class="form-control" name="txtemail" id="txtemail">
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtpass">Contraseña</label>
+            <input type="password"  class="form-control" name="txtpass" id="txtpass">
+          </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3.5">
+                <label for="txtarea">Área</label>
+                <select name="txtarea" class="form-control"  >
+                  
+                  <option>Administrativa</option>
+                  <option>Bondeo</option>
+                  <option>Corte vertical</option>
+                  <option>Prehormado</option>
+                  <option>Corte plano</option>
+                  <option>Empaque</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3.5">
+                <label for="txtrol">Rol</label>
+                <select name="txtrol" class="form-control"  >
+                  
+                  <option>Administrador</option>
+                  <option>Operario</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3.5">
+                <label for="txtactivo">Activo</label>
+                <select name="txtactivo" class="form-control"  >
+                  
+                  <option>Sí</option>
+                  <option>No</option>
+                </select>
+              </div>
+      
+
+
+          </div>
+        </div>
+    <br>    <br>    <br>
+    <input type="submit" value="Guardar cambios"> 
+    <a class="btn btn-success" href="/verUsers" role="button";>Cancelar</a>
+</form>
+
+</body>
+</html>

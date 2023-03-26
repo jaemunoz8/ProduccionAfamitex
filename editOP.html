@@ -1,0 +1,263 @@
+ <!doctype html>
+ <html lang="es">
+   <head>
+     <title>Editar OP</title>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   </head>
+   <body>
+<center><h1>Editar OP</h1> <br></center>
+
+<form action="/updateOP" method="post" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-group col-md-1">
+        <label for="txtoc" {{show["oc"]}}>OC</label>
+        <input type="text" class="form-control" name="txtoc" placeholder="OC" value="{{dato["oc"]}}" readonly {{show["oc"]}}>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="txtop" {{show["op"]}}>OP</label>
+        <input type="text" class="form-control" name="txtop" placeholder="OP" value="{{dato["op"]}}" readonly {{show["op"]}}>
+      </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcolor" {{show["color"]}}>Color</label>
+          <input type="text" class="form-control" name="txtcolor" placeholder="Color" value="{{dato["color"]}}"" {{show["color"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcolor1" {{show["color1"]}}>Color 1</label>
+          <input type="text" class="form-control" name="txtcolor1" placeholder="Color 1" value="{{dato["color1"]}}" {{show["color1"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcolor2" {{show["color2"]}}>Color 2</label>
+          <input type="text" class="form-control" name="txtcolor2" placeholder="Color 2" value="{{dato["color2"]}}" {{show["color2"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtespuma" {{show["espuma"]}}>Ref/Color espuma</label>
+          <input type="text" class="form-control" name="txtespuma" placeholder="Espuma" value="{{dato["espuma"]}}" {{show["espuma"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+            <label for="txtcod_tela" {{show["cod_tela"]}}>Código tela</label>
+            <input type="text" class="form-control" name="txtcod_tela" placeholder="Código tela" value="{{dato["cod_tela"]}}" {{show["cod_tela"]}}>
+         </div>
+      </div>
+      <!--FILA #2-->
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-1.5">
+          <label for="txttalla" {{show["talla"]}}>Talla</label>
+          <input type="text" class="form-control" name="txttalla" placeholder="Talla" value="{{dato["talla"]}}" {{show["talla"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcantidad_solicitada" {{show["cantidad_solicitada"]}}>Cantidad solicitada</label>
+          <input type="number" class="form-control" name="txtcantidad_solicitada" placeholder="Cantidad solicitada" value="{{dato["cantidad_solicitada"]}}" {{show["cantidad_solicitada"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtlargo" {{show["largo"]}}>Largo</label>
+          <input type="float" class="form-control" name="txtlargo" placeholder="Largo" value="{{'%0.2f'%dato["largo"]}}" {{show["largo"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtancho" {{show["ancho"]}}>Ancho</label>
+          <input type="float" class="form-control" name="txtancho" placeholder="Ancho" value="{{'%0.2f'%dato["ancho"]}}"  {{show["ancho"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txttira" {{show["tira"]}}>Tira</label>
+          <input type="float" class="form-control" name="txttira" placeholder="Tira" value="{{'%0.2f'%dato["tira"]}}" {{show["tira"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtmetros_espuma" {{show["metros_espuma"]}}>Espuma (mt)</label>
+          <input type="float" class="form-control" name="txtmetros_espuma" placeholder="Metros espuma" value="{{'%0.2f'%dato["metros_espuma"]}}" {{show["metros_espuma"]}}>
+        </div>
+      </div>
+      <!--FILA #3-->
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-1.5">
+          <label for="txtmetros_tela" {{show["metros_tela"]}}>Tela (mt)</label>
+          <input type="float" class="form-control" name="txtmetros_tela" placeholder="Metros tela" value="{{'%0.2f'%dato["metros_tela"]}}" {{show["metros_tela"]}}>
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtmetros_tela1" {{show["metros_tela1"]}}>Tela 1 (mt)</label>
+          <input type="float" class="form-control" name="txtmetros_tela1" placeholder="Metros tela 1" value="{{'%0.2f'%dato["metros_tela1"]}}" {{show["metros_tela1"]}}>
+        </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtmetros_tela2" {{show["metros_tela2"]}}>Tela 2 (mt)</label>
+            <input type="float" class="form-control" name="txtmetros_tela2" placeholder="Metros tela 2" value="{{'%0.2f'%dato["metros_tela2"]}}" {{show["metros_tela2"]}}>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="txtverific_existencia_espuma" {{show["verific_existencia_espuma"]}}>Existencia espuma</label>
+            <input type="text" class="form-control" name="txtverific_existencia_espuma" placeholder="Existencia espuma" value="{{dato["verific_existencia_espuma"]}}" {{show["verific_existencia_espuma"]}}>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="txtverific_existencia_tela" {{show["verific_existencia_tela"]}}>Existencia tela</label>
+            <input type="text" class="form-control" name="txtverific_existencia_tela" placeholder="Existencia tela" value="{{dato["verific_existencia_tela"]}}" {{show["verific_existencia_tela"]}}>
+          </div>
+        </div>
+      <!--FILA #4-->
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="txtreferencia" {{show["referencia"]}}>Referencia</label>
+          <input type="text" class="form-control" name="txtreferencia" placeholder="Referencia" value="{{dato["referencia"]}}" {{show["referencia"]}}>
+      </div>
+        <div class="form-group col-md-1">
+          <label for="txtpestana" {{show["pestana"]}}>Pestaña</label>
+          <select name="txtpestana" class="form-control" placeholder=" " {{show["pestana"]}}>
+          <option selected>{{dato["pestana"]}}</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+        </div>
+        <div class="form-group col-md-3.5">
+          <label for="txtarea" {{show["area"]}}>Área</label>
+          <select name="txtarea" class="form-control" value="{{dato["area"]}}" {{show["area"]}}>
+            <option selected>{{dato["area"]}}</option>
+            <option>Bondeo</option>
+            <option>Corte_vertical</option>
+            <option>Prehormado</option>
+            <option>Corte_plano</option>
+            <option>Empaque</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="txtasignado" {{show["asignado"]}}>Asignado a</label>
+          <input type="text" class="form-control" name="txtasignado" placeholder="Asignado a" value="{{dato["asignado"]}}" {{show["asignado"]}}>
+        </div>
+        <div class="form-group col-md-3.5">
+            <label for="txtestadoop" {{show["estadoop"]}}>Estado</label>
+            <select name="txtestadoop" class="form-control" value="{{dato["estadoop"]}}" {{show["estadoop"]}}>
+              <option selected>{{dato["estadoop"]}}</option>
+              <option {{show["option"]}}>Sin iniciar</option>
+              <option {{show["option"]}}>En progreso</option>
+              <option {{show["option"]}}>Finalizado</option>
+            </select>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="txtobservaciones" {{show["observaciones"]}}>Observaciones</label>
+            <textarea type="text" class="form-control" name="txtobservaciones" value="{{dato["observaciones"]}}" {{show["observaciones"]}}>{{dato["observaciones"]}}</textarea>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="txtcanastas_x_talla" {{show["cant_canastas_x_talla"]}}>Canastas por talla</label>
+            <textarea type="text" class="form-control" name="txtcanastas_x_talla" value="{{dato["cant_canastas_x_talla"]}}" {{show["cant_canastas_x_talla"]}}>{{dato["cant_canastas_x_talla"]}}</textarea>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="txtimperfectos" {{show["cant_imperfectos"]}}>Cantidad imperfectos</label>
+            <textarea type="text" class="form-control" name="txtimperfectos" value="{{dato["cant_imperfectos"]}}" {{show["cant_imperfectos"]}}>{{dato["cant_imperfectos"]}}</textarea>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcant_corte1" {{show["cant_corte1"]}}>Cantidad corte 1</label>
+            <input type="number" class="form-control" name="txtcant_corte1" placeholder="Cantidad corte 1" value="{{dato["cant_corte1"]}}" {{show["cant_corte1"]}}>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcant_corte2" {{show["cant_corte2"]}}>Cantidad corte 2</label>
+            <input type="number" class="form-control" name="txtcant_corte2" placeholder="Cantidad corte 2" value="{{dato["cant_corte2"]}}" {{show["cant_corte2"]}}>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcant_prehor" {{show["cant_prehor"]}}>Cantidad prehormado</label>
+            <input type="number" class="form-control" name="txtcant_prehor" placeholder="Cantidad prehormado" value="{{dato["cant_prehor"]}}" {{show["cant_prehor"]}}>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcant_cp" {{show["cant_cp"]}}>Cantidad corte plano</label>
+            <input type="number" class="form-control" name="txtcant_cp" placeholder="Cantidad corte plano" value="{{dato["cant_cp"]}}" {{show["cant_cp"]}}>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcant_bond" {{show["cant_bond"]}}>Cantidad bondeo</label>
+            <input type="number" class="form-control" name="txtcant_bond" placeholder="Cantidad bondeo" value="{{dato["cant_bond"]}}" {{show["cant_bond"]}}>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcant_emp" {{show["cant_emp"]}}>Cantidad empaque</label>
+            <input type="number" class="form-control" name="txtcant_emp" placeholder="Cantidad empaque" value="{{dato["cant_emp"]}}" {{show["cant_emp"]}}>
+          </div>
+          <div class="form-group col-md-2.5">
+            <label for="txtfecha_fact" {{show["fecha_facturacion"]}}>Fecha facturación</label>
+            <input type="date"  class="form-control" name="txtfecha_fact" value="{{dato["fecha_facturacion"]}}" {{show["fecha_facturacion"]}}>
+          </div>
+    
+      </div>
+
+    <input type="submit" value="Guardar cambios"> 
+    <a class="btn btn-success" href="javascript:window.history.back();" role="button";>Cancelar</a>
+  </form>
+</body>
+</html>
+
+
+
+
+<!-- <form action="/updateOP" method="post" enctype="multipart/form-data">
+    OC:
+    <input type="text" name="txtoc" value="{{dato["oc"]}}" name="txtoc" style="color: blue" readonly>
+    <br><br>
+    OP:
+    <input type="text" name="txtop" value="{{dato["op"]}}" name="txtop" style="color: blue" readonly>
+    <br><br>
+    Color:
+    <input type="text" name="txtcolor" value="{{dato["color"]}}" name="txtcolor">
+    <br><br>
+    Color1:
+    <input type="text" name="txtcolor1" value="{{dato["color1"]}}" name="txtcolor1">
+    <br><br>
+    Color2:
+    <input type="text" name="txtcolor2" value="{{dato["color2"]}}" name="txtcolor2">
+    <br><br>
+    Espuma:
+    <input type="text" name="txtespuma" value="{{dato["espuma"]}}" name="txtespuma">
+    <br><br>
+    Código tela:
+    <input type="text" name="txtcod_tela" value="{{dato["cod_tela"]}}" name="txtcod_tela">
+    <br><br>
+    Talla:
+    <input type="text" name="txttalla" value="{{dato["talla"]}}" name="txttalla">
+    <br><br>
+    Cantidad solicitada:
+    <input type="number" name="txtcantidad_solicitada" value="{{dato["cantidad_solicitada"]}}" name="txtcantidad_solicitada">
+    <br><br>
+    Largo:
+    <input type="float" name="txtlargo" value="{{'%0.2f'%dato["largo"]}}" name="txtlargo">
+    <br><br>
+    Ancho:
+    <input type="float" name="txtancho" value="{{'%0.2f'%dato["ancho"]}}" name="txtancho">
+    <br><br>
+    Tira:
+    <input type="float" name="txttira" value="{{'%0.2f'%dato["tira"]}}" name="txttira">
+    <br><br>
+    Metros de espuma:
+    <input type="float" name="txtmetros_espuma" value="{{'%0.2f'%dato["metros_espuma"]}}" name="txtmetros_espuma">
+    <br><br>
+    Metros de tela:
+    <input type="float" name="txtmetros_tela" value="{{'%0.2f'%dato["metros_tela"]}}" name="txtmetros_tela">
+    <br><br>
+    Metros de tela 1:
+    <input type="float" name="txtmetros_tela1" value="{{'%0.2f'%dato["metros_tela1"]}}" name="txtmetros_tela1">
+    <br><br>
+    Metros de tela 2:
+    <input type="float" name="txtmetros_tela2" value="{{'%0.2f'%dato["metros_tela2"]}}" name="txtmetros_tela2">
+    <br><br>
+    Verificación existencia espuma:
+    <input type="text" name="txtverific_existencia_espuma" value="{{dato["verific_existencia_espuma"]}}" name="txtverific_existencia_espuma">
+    <br><br>
+    Verificación existencia tela:
+    <input type="text" name="txtverific_existencia_tela" value="{{dato["verific_existencia_tela"]}}" name="txtverific_existencia_tela">
+    <br><br>
+    Observaciones:
+    <input type="text" name="txtobservaciones" value="{{dato["observaciones"]}}" name="txtobservaciones">
+    <br><br>
+    Cantidad despachada:
+    <input type="number" name="txtcantidad_despachada" value="{{dato["cantidad_despachada"]}}" name="txtcantidad_despachada">
+    <br><br>
+    Estado de OP:
+    <input type="text" name="txtestadoop" value="{{dato["estadoop"]}}" name="txtestadoop">
+    <br><br>
+    Asignado a:
+    <input type="text" name="txtasignado" value="{{dato["asignado"]}}" name="txtasignado">
+    <br><br>
+    <br>
+    <br>
+    <input type="submit" value="Guardar cambios"> 
+
+</form>
+ -->

@@ -1,0 +1,219 @@
+<!-- <form action="/storeOP" method="post" enctype="multipart/form-data">
+    OC:
+    <input type="text" name="txtoc" id="txtoc" style="color: blue" readonly value="{{_oc}}">
+    <br><br>
+    OP:
+    <input type="text" name="txtop" id="txtop" style="color: blue" readonly value="{{_op}}">
+    <br><br>
+    Color:
+    <input type="text" name="txtcolor" id="txtcolor">
+    <br><br>
+    Color1:
+    <input type="text" name="txtcolor1" id="txtcolor1">
+    <br><br>
+    Color2:
+    <input type="text" name="txtcolor2" id="txtcolor2">
+    <br><br>
+    Espuma:
+    <input type="text" name="txtespuma" id="txtespuma">
+    <br><br>
+    Código tela:
+    <input type="text" name="txtcod_tela" id="txtcod_tela">
+    <br><br>
+    Talla:
+    <input type="text" name="txttalla" id="txttalla">
+    <br><br>
+    Cantidad solicitada:
+    <input type="number" name="txtcantidad_solicitada" id="txtcantidad_solicitada">
+    <br><br>
+    Largo:
+    <input type="float" name="txtlargo" id="txtlargo">
+    <br><br>
+    Ancho:
+    <input type="float" name="txtancho" id="txtancho">
+    <br><br>
+    Tira:
+    <input type="float" name="txttira" id="txttira">
+    <br><br>
+    Metros de espuma:
+    <input type="float" name="txtmetros_espuma" id="txtmetros_espuma">
+    <br><br>
+    Metros de tela:
+    <input type="float" name="txtmetros_tela" id="txtmetros_tela">
+    <br><br>
+    Metros de tela 1:
+    <input type="float" name="txtmetros_tela1" id="txtmetros_tela1">
+    <br><br>
+    Metros de tela 2:
+    <input type="float" name="txtmetros_tela2" id="txtmetros_tela2">
+    <br><br>
+    Verificación existencia espuma:
+    <input type="text" name="txtverific_existencia_espuma" id="txtverific_existencia_espuma">
+    <br><br>
+    Verificación existencia tela:
+    <input type="text" name="txtverific_existencia_tela" id="txtverific_existencia_tela">
+    <br><br>
+    Observaciones:
+    <input type="text" name="txtobservaciones" id="txtobservaciones">
+    <br><br>
+    Cantidad despachada:
+    <input type="number" name="txtcantidad_despachada" id="txtcantidad_despachada">
+    <br><br>
+    Estado de OP:
+    <input type="text" name="txtestadoop" id="txtestadoop">
+    <br><br>
+    Asignado a:
+    <input type="text" name="txtasignado" id="txtasignado">
+    <br><br>
+    <br>
+    <br>
+    <input type="submit" value="Agregar">
+</form> -->
+
+<!doctype html>
+ <html lang="es">
+   <head>
+     <title>Crear OP</title>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   </head>
+   <body>
+
+    ><center><h1>Crear OP</h1></center> <br>
+<form action="/storeOP" method="post" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-group col-md-1">
+        <label for="txtoc">OC</label>
+        <input type="text" class="form-control" name="txtoc" placeholder="OC" value="{{_oc}}" readonly>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="txtop">OP</label>
+        <input type="text" class="form-control" name="txtop" placeholder="OP" value="{{_op}}" readonly>
+      </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcolor">Color</label>
+          <input type="text" class="form-control" name="txtcolor" placeholder="Color"  >
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcolor1">Color 1</label>
+          <input type="text" class="form-control" name="txtcolor1" placeholder="Color 1"  >
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcolor2">Color 2</label>
+          <input type="text" class="form-control" name="txtcolor2" placeholder="Color 2" >
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtespuma">Espuma</label>
+          <input type="text" class="form-control" name="txtespuma" placeholder="Espuma"  >
+        </div>
+        <div class="form-group col-md-1.5">
+            <label for="txtcod_tela">Código tela</label>
+            <input type="text" class="form-control" name="txtcod_tela" placeholder="Código tela"  >
+         </div>
+      </div>
+      <!--FILA #2-->
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-1.5">
+          <label for="txttalla">Talla</label>
+          <input type="text" class="form-control" name="txttalla" placeholder="Talla"  >
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtcantidad_solicitada">Cantidad solicitada</label>
+          <input type="number" class="form-control" name="txtcantidad_solicitada" placeholder="Cantidad solicitada"  >
+        </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtlargo">Largo</label>
+            <input type="float" class="form-control" name="txtlargo" placeholder="Largo" >
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtancho">Ancho</label>
+            <input type="float" class="form-control" name="txtancho" placeholder="Ancho" >
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txttira">Tira</label>
+            <input type="float" class="form-control" name="txttira" placeholder="Tira"  >
+          </div>
+          <div class="form-group col-md-1.5">
+              <label for="txtmetros_espuma">Espuma (mt)</label>
+              <input type="float" class="form-control" name="txtmetros_espuma" placeholder="Metros espuma"  >
+           </div>
+        </div>
+      <!--FILA #3-->
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-1.5">
+          <label for="txtmetros_tela">Tela (mt)</label>
+          <input type="float" class="form-control" name="txtmetros_tela" placeholder="Metros tela"  >
+        </div>
+        <div class="form-group col-md-1.5">
+          <label for="txtmetros_tela1">Tela 1 (mt)</label>
+          <input type="float" class="form-control" name="txtmetros_tela1" placeholder="Metros tela 1"  >
+        </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtmetros_tela2">Tela 2 (mt)</label>
+            <input type="float" class="form-control" name="txtmetros_tela2" placeholder="Metros tela 2"  >
+          </div>
+          <div class="form-group col-md-3">
+            <label for="txtverific_existencia_espuma">Existencia espuma</label>
+            <input type="text" class="form-control" name="txtverific_existencia_espuma" placeholder="Existencia espuma"  >
+          </div>
+          <div class="form-group col-md-3">
+            <label for="txtverific_existencia_tela">Existencia tela</label>
+            <input type="text" class="form-control" name="txtverific_existencia_tela" placeholder="Existencia tela"  >
+          </div>
+
+        </div>
+      <!--FILA #4-->
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-2.5">
+            <label for="txtcantidad_despachada">Cantidad despachada</label>
+            <input type="number" class="form-control" name="txtcantidad_despachada" placeholder="Cantidad despachada" >
+        </div>
+        <div class="form-group col-md-3">
+            <label for="txtasignado">Asignado a (pna)</label>
+            <input type="text" class="form-control" name="txtasignado" placeholder="Asignado a" >
+        </div>
+        <div class="form-group col-md-1">
+          <label for="txtpestana">Pestaña</label>
+          <select name="txtpestana" class="form-control" placeholder=" ">
+          <option selected> </option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+        </div>
+        <div class="form-group col-md-3.5">
+          <label for="txtarea">Área</label>
+          <select name="txtarea" class="form-control" >
+            <option>Bondeo</option>
+            <option>Corte_vertical</option>
+            <option>Prehormado</option>
+            <option>Corte_plano</option>
+            <option>Empaque</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3.5">
+            <label for="txtestadoop">Estado</label>
+            <select name="txtestadoop" class="form-control" >
+              <option >Sin iniciar</option>
+              <option>En progreso</option>
+              <option>Finalizado</option>
+            </select>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="txtobservaciones">Observaciones</label>
+            <textarea type="text" class="form-control" name="txtobservaciones" placeholder="Observaciones" ></textarea>
+        </div>
+      </div>
+    <input type="submit" value="Guardar"> 
+    <a class="btn btn-success" href="/verOP/{{_oc}}" role="button";>Cancelar</a>
+  </form>
+</body>
+</html>

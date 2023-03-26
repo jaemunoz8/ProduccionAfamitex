@@ -1,0 +1,183 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Listado OC</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <div class="row">
+      <div class="col-12">
+        <a name="" id="" class="btn btn-outline-dark" href="/" role="button" style="float: right;" >Cerrar sesión</a>
+      </div>
+      <br>
+      <div class="col-12">
+        <a name="" id="" class="btn btn-outline-dark admu" href="/verUsers" role="button" style="float: right;" >Administrar usuarios</a>
+      </div>
+  </div>
+    <center><h1>Listado de OC</h1></center>
+      <br>
+      <a class="btn btn-success" href="/create" role="button";>Crear nueva OC</a>
+      <br>
+      <!CREANDO UNA TABLA
+      <div class="container" style="background-color:red">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Acciones</th>
+              <th>OC</th>
+              <th>Cliente</th>
+              <th>Referencia</th>
+              <th>Fecha solicitud</th>
+              <th>Fecha ingreso</th>
+              <th>ANS</th>
+              <th>Fecha programada entrega</th>
+              <th>Total despachado</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for dato in datos %}
+              <tr>
+                <!--<td scope="row"></td> -->
+                <td>
+                  <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Acciones
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a href = "/edit/{{dato['oc']}}"  >Editar </a>
+                      <br>
+                      <a class="Ver OP" href="/verOP/{{dato['_id']}}">Ver OP</a>
+                      <br>                 
+                      <a onclick="aviso('{{dato["oc"]}}')">Eliminar</a>
+                      <!-- CÓDIGO PARA CONFIRMAR LA ELIMINACIÓN -->
+             <script>
+              function aviso(vari){
+          
+                const swalWithBootstrapButtons = Swal.mixin({
+                  customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                  },
+                  buttonsStyling: false
+                })
+                
+                swalWithBootstrapButtons.fire({
+                  title: 'Está seguro de eliminar?',
+                  text: "No podrá deshacer esta acción",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Sí, borrar!',
+                  cancelButtonText: 'No, cancelar!',
+                  reverseButtons: true
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire(
+                      window.location.href="/destroy/"+vari,
+                      'Borrado!',
+                      'El registro ha sido borrado.',
+                      'success'
+                    )
+                  } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                  ) {
+                    swalWithBootstrapButtons.fire(
+                      'Cancelado',
+                      'No se ha borrado el registro',
+                      'error'
+                    )
+                  }
+                })
+              }
+          
+            </script> 
+              <!-- FIN DE CÓDIGO PARA ELIMINACIÓN -->
+                    </div>
+                  </div>
+                </td>
+                <td>{{dato["oc"]}}</td>
+                <td>{{dato["cliente"]}}</td>
+                <td>{{dato["referencia"]}}</td>
+                <td>{{dato["fecha_solicitud"]}}</td>
+                <td>{{dato["fecha_ingresado"]}}</td>
+                <td>{{dato["ans"]}}</td>
+                <td>{{dato["fecha_programada_entrega"]}}</td>
+                <td>{{dato["total_despachado"]}}</td>
+                <td>{{dato["estadooc"]}}</td>
+              </tr>
+
+            {% endfor %}
+            <tr>
+              <td scope="row"></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+--<!CREANDO CARRUSEL
+  </body>
+</html>
+
+
+
+<!-- CÓDIGO PARA CONFIRMAR ELIMINACIÓN EN EL NAVEGADOR -->
+<!-- <script>
+  $(document).ready(function()
+    {
+    $('#confirm-delete').on('show.bs.modal',function(){
+    		$('.btn-ok').click(function(){
+        	console.log("Llamamos a la función de eliminación");
+        });
+    });
+    		
+        $('#go').click(function()
+        {
+            $('#confirm-delete').modal('show');
+           
+        })
+    });
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+<div class="modal fade" id="confirm-delete" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar registro</h4>
+                </div>
+                <div class="modal-body">
+                    <label>¿Estás seguro de eliminar el registro?</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-ok" data-dismiss="modal">Sí</button>
+                    <a class="btn btn-danger" data-dismiss="modal">No
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button id="go">
+    X
+    </button>
+
+-->
+
+
+

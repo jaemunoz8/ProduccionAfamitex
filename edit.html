@@ -1,0 +1,85 @@
+<!-- <link href="dist/css/date-time-picker-component.min.css" rel="stylesheet" />
+<script src="dist/js/date-time-picker-component.min.js"></script>
+<div id="datepicker"></div>
+<br>  --> 
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Editar OC</title> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <center><h1>Editar OC</h1> <br></center>
+  <form action="/update" method="post" enctype="multipart/form-data">
+    <div class="form-row">
+          <div class="form-group col-md-1">
+            <label for="txtoc">OC</label>
+            <input type="text" class="form-control" name="txtoc" value="{{dato["oc"]}}" id="txtoc" style="color:blue" readonly>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="txtop">Cliente</label>
+            <input type="text"  class="form-control" name="txtcliente" value="{{dato["cliente"]}}" id="txtcliente">
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcolor">Referencia</label>
+            <input type="text"  class="form-control" name="txtreferencia" value="{{dato["referencia"]}}" id="txtreferencia">
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcolor1">Fecha de ingreso</label>
+            <input type="date"  class="form-control" name="txtfecha_ingreso" value="{{dato["fecha_ingresado"]}}" id="txtfecha_ingreso" readonly>
+          </div>
+          <div class="form-group col-md-1.5">
+            <label for="txtcolor2">Fecha de solicitud</label>
+            <input type="date"  class="form-control" name="txtfecha_solicitud" value="{{dato["fecha_solicitud"]}}" id="txtfecha_solicitud">
+          </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-1">
+              <label for="txtoc">ANS</label>
+              <input type="text"  class="form-control" name="txtans" value="{{dato["ans"]}}" id="txtans">
+            </div>
+            <div class="form-group col-md-2.5">
+              <label for="txtop">Fecha programada de entrega</label>
+              <input type="date"  class="form-control" name="txtfecha_programada_entrega" value="{{dato["fecha_programada_entrega"]}}" id="txtfecha_programada_entrega">
+            </div>
+              <div class="form-group col-md-1.5">
+                <label for="txtcolor">Total despachado</label>
+                <input type="text"  class="form-control" name="txttotal_despachado" value="{{dato["total_despachado"]}}" id="txttotal_despachado">
+              </div>
+      
+              <div class="form-group col-md-3.5">
+                <label for="txtestadooc">Estado</label>
+                <select name="txtestadooc" class="form-control" default="{{dato["estadooc"]}}" aria-label="{{dato["estadooc"]}}" >
+                  <option selected={{dato["estadooc"]}}>{{dato["estadooc"]}}</option>
+                  <option>Sin iniciar</option>
+                  <option>En progreso</option>
+                  <option>Finalizado</option>
+                </select>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="txtobservaciones">Observaciones</label>
+                <textarea type="text" class="form-control" name="txtobservaciones" value="{{dato["observaciones"]}}" >{{dato["observaciones"]}}</textarea>
+            </div>
+          </div>
+        </div>
+    <br>    <br>    <br>
+    <input type="submit" value="Guardar cambios"> 
+    <a class="btn btn-success" href="/index" role="button";>Cancelar</a>
+</form>
+
+</body>
+</html>
+
+
+
+
